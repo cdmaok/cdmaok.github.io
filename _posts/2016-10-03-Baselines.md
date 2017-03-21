@@ -23,8 +23,11 @@ description: Algorithm
       * https://github.com/DataTeaser/textteaser
     * pkusumsum
       * http://www.icst.pku.edu.cn/lcwm/wanxj/pkusumsum.htm
-    * Consensus-Based-Summarizer 
+    * Consensus-Based-Summarizer
       * https://github.com/ayushoriginal/Consensus-Based-Summarizer
+
+* doc similarity based on word2vec (wmd)
+  * https://github.com/mkusner/wmd
 
 * 中文语义相似度计算
   * https://github.com/memect/hao/blob/master/awesome/chinese-word-similarity.md

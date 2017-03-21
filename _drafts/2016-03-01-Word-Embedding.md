@@ -19,4 +19,3 @@ category: NLP
 * NNLM basic Language model
 * LBL 双线性结构
 * RNNLM 利用所有的上下文信息，不进行简化
-* 

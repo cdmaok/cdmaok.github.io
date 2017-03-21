@@ -1,51 +1,32 @@
+本文用的主题
 [Demo](http://webjeda.com/krishna)
 
-# Features:
-Krishna is a minimal theme made for code based blogs and project showcases. Suitable fonts are selected for better readability. Since the theme is created for smartphone reading.
-
-# Installation: 
-Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is important because ``gh-pages`` branch is used here only to host the blog. You should be using the master branch as the source and create a fresh ``gh-pages`` branch.
-
-Watch my video on instlallation
-<iframe class="video" src="https://www.youtube.com/embed/T2nx6tj-ZH4?rel=0?rel=0" frameborder="0" allowfullscreen></iframe>
-
-## How to delete old **gh-pages** branch?
-After forking the repository, click on **branches**.
-
-![delete gh-pages branch](http://blog.webjeda.com/images/delete-github-branch.png)
-
-Delete ``gh-pages`` branch.
-![delete gh-pages branch](http://blog.webjeda.com/images/delete-github-branch-2.png)
-
-You have to create a new ``gh-pages`` branch using the master branch. Go back to the forked repository and create ``gh-pages`` branch.
-
-![create gh-pages branch](http://blog.webjeda.com/images/create-gh-pages-branch.JPG)
-
-Now, go to settings and check the **Github Pages** section. You should see a URL where the blog is hosted.
-
-This process will host the theme as a **Project Page**. You can also download the files for local development. 
-
-The default theme will look like this
-
-![webjeda krishna jekyll theme](https://github.com/sharu725/krishna/raw/gh-pages/images/krishna-minimal-jekyll-theme-menu-bar-1.png)
 
 
-Expanded menu bar would look like this
+## Todolist:
+* 有时间可以把填补这个也加进来吧
+* some code in java Concurrency
+* 优化方法里面的Natural Gradient
+* Java Interview的问题一个都没有回答！！！！
+* xgboost 有空补一下gbm，rgt
+* imbalance-ml 把毕业论文里面的贴出来 （Done）
+* Cheat-Spellspire 要补实验
+* 基数估计里面有好多hash的函数可以看看，加到Usual-Hash
+* 推荐系统也可以用毕业设计里面的东西
+* 设计模式没写完
+* word embedding
+* Markdown的公式编辑什么时候学！！！
+* LDA 大规模公式 （Done）
+* http://jmlr.org/proceedings/papers/v37/kusnerb15.pdf 一个doc distance by word embedding
 
-![webjeda krishna jekyll theme sidebar](https://github.com/sharu725/krishna/raw/gh-pages/images/krishna-minimal-jekyll-theme-menu-bar-2.png)
 
+## Matchp ReadlingList
+* http://getdango.com/emoji-and-deep-learning/ 基本是用RNN训练emoji
+* 还有一个用Multi-modal 的方法做的。
+* Davidov, D., Tsur,O., & Rappoport, A. (2010, August). Enhanced sentiment learning usingtwitter hashtags and smileys. In Proceedingsof the 23rd international conference on computational linguistics: posters (pp. 241-249). Association forComputational Linguistics.
+* Ganster, T., Eimler,S. C., & Krämer, N. C. (2012). Same same but different!? The differentialinfluence of smilies and emoticons on person perception. Cyberpsychology, Behavior, andSocial Networking, 15(4),226-230.
+* Kralj Novak, P.,Smailović, J., Sluban, B., Mozetič, I., Liu, B., Liu, B., … Good, I. (2015).Sentiment of Emojis. PLOS ONE, 10(12), e0144296. https://doi.org/10.1371/journal.pone.0144296
 
-This theme is made especially for smartphones.
+* Tian, Y., Galery,T., Dulcinati, G., Molimpakis, E., & Sun, C. (2017). Facebook emotions:Reactions and Emojis. In Proceedings of the EACL 2017 Workshop on NaturalLanguage Processing for Social Media (SocialNLP).
 
-![webjeda krishna responsive jekyll theme](https://github.com/sharu725/krishna/raw/gh-pages/images/krishna-minimal-jekyll-theme-menu-bar-responsive.png)
-
-# Development
-Make changes to the **master** branch and create a pull request. Do not use **gh-pages** branch as it is used to host the theme.
-
-# License
-MIT License
-
-# Change Log
-
-### Version 0.8
-* Initial release.
+* Zhao, J., Dong, L., Wu, J., & Xu, K.(2012). MoodLens: An Emoticon-Based Sentiment Analysis System for ChineseTweets. Proceedings of the 18th ACM SIGKDD International Conference onKnowledge Discovery and Data Mining - KDD ’12, 1528–1531. https://doi.org/10.1145/2339530.2339772
