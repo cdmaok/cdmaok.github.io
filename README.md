@@ -18,6 +18,10 @@
 * Markdown的公式编辑什么时候学！！！
 * LDA 大规模公式 （Done）
 * http://jmlr.org/proceedings/papers/v37/kusnerb15.pdf 一个doc distance by word embedding
+* DAO & MVC @ImportResource @Value
+* 分布式神经网络 (Done)
+* regex 那个好像有点忘记了
+* word embedding
 
 
 ## Matchp ReadlingList

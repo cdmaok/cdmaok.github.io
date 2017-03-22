@@ -14,9 +14,14 @@ description: Algorithm
     * https://github.com/ryankiros/skip-thoughts
     * http://research.microsoft.com/en-us/downloads/731572aa-98e4-4c50-b99d-ae3f0c9562b9/default.aspx
     * http://datascienceassn.org/content/table-xx2vec-algorithms
+  * Doc2VecC
+    * https://github.com/mchen24/iclr2017
 
  * glove
     * global vector for word presestation http://nlp.stanford.edu/projects/glove/
+
+  * swivel
+    * https://github.com/tensorflow/models/tree/master/swivel
 
 * summarization          
     * textteaser  
@@ -36,6 +41,9 @@ description: Algorithm
 * 中文情感分析
   * https://github.com/memect/hao/issues/113
 
+* 中文词库
+  * http://thuocl.thunlp.org/
+
 * nlp 开源工具 刘知远
   * https://www.zhihu.com/question/19929473/answer/90201148?utm_campaign=webshare&utm_source=weibo&utm_medium=zhihu
 
@@ -54,6 +62,9 @@ https://github.com/haifengl/smile
 
 * 一些中文常量python lib Zhon is a Python library that provides constants commonly used in Chinese text processing
   * http://zhon.readthedocs.io/en/latest/
+
+* Industrial-strength Natural Language Processing (NLP) with Python and Cython
+  * https://github.com/explosion/spaCy
 
 
 
@@ -82,6 +93,9 @@ https://cloudplatform.googleblog.com/2015/12/Google-Cloud-Vision-API-changes-the
 
 * petuum
   * http://www.petuum.com/
+
+* 概率图模型框架Edward
+  * http://edwardlib.org/
 
 ## 数据
 
