@@ -23,6 +23,9 @@ description: Algorithm
   * swivel
     * https://github.com/tensorflow/models/tree/master/swivel
 
+  * Pre-Trained Model 可以直接用
+    * https://github.com/Kyubyong/wordvectors
+
 * summarization          
     * textteaser  
       * https://github.com/DataTeaser/textteaser
