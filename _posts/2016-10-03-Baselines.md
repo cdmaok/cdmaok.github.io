@@ -26,6 +26,9 @@ description: Algorithm
   * Pre-Trained Model 可以直接用
     * https://github.com/Kyubyong/wordvectors
 
+  * parallel word2vec
+    * https://github.com/IntelLabs/pWord2Vec
+
   * xx2vec list
     * https://gist.github.com/nzw0301/333afc00bd508501268fa7bf40cafe4e
 
