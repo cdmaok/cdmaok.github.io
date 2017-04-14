@@ -16,10 +16,10 @@ description: Algorithm
 #### SGD
 加速的方法，每次不求出整批数据的负梯度方向，改为某一个数据的梯度方向，但是迭代的次数就要很多，目前说到的SGD应该是mini-batch GD,对一个子集求负梯度方向
 ![sgd](http://7xpv97.com1.z0.glb.clouddn.com/058402a8abee7236e5b6a6548c66c287.png)
-关于SGD经常被嫌弃的原因还有因为每次得到的梯度可能是噪音，降噪的方法主要有batch(Dynamic Sample Size,每次batch的大小不一样)，随着迭代的进行，batch越来越大（减小bias）,Gradient Aggregation 每次的梯度方向累加之前的梯度方向，其中包括SVGR,SAGA,Iterate Averaging.
+关于SGD经常被嫌弃的原因还有因为每次得到的梯度可能是噪音，降噪的方法主要有batch(Dynamic Sample Size,每次batch的大小不一样)，随着迭代的进行，batch越来越大（减小bias）,Gradient Aggregation 每次的梯度方向累加之前的梯度方向，其中包括SVGR,SAGA,Iterate Averaging.还有一种改进就是adaptive sampling, 即每次选数据都是根据一个先验分布而不是均一分布
 
 #### Momentum
-momentum是模拟物理里动量的概念，积累之前的动量来替代真正的梯度。据说抑制震荡，可以加速收敛的过程。\gamma是一个会变动的参数[0,1]，v是一个大小跟\theta一样的参数，起到累积效果，早期的时候，\gamma设定比较大，这样能保持一致的速度快速下降，中后期的时候，梯度变小了，v哈哈是能保持一个较大的值，帮助\theta跳出震荡  
+momentum是模拟物理里动量的概念，积累之前的动量来替代真正的梯度。据说抑制震荡，可以加速收敛的过程。\gamma是一个会变动的参数[0,1]，v是一个大小跟\theta一样的参数，起到累积效果，早期的时候，\gamma设定比较大，这样能保持一致的速度快速下降，中后期的时候，梯度变小了，v是能保持一个较大的值，帮助\theta跳出震荡  
 ![momentum](http://7xpv97.com1.z0.glb.clouddn.com/658262ce7b334d32f98ea1ae6e28ace0.png)
 
 #### Nesterov

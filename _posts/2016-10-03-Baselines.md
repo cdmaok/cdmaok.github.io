@@ -14,7 +14,7 @@ description: Algorithm
     * https://github.com/ryankiros/skip-thoughts
     * http://research.microsoft.com/en-us/downloads/731572aa-98e4-4c50-b99d-ae3f0c9562b9/default.aspx
     * http://datascienceassn.org/content/table-xx2vec-algorithms
-  * Doc2VecC
+  * Doc2Vec
     * https://github.com/mchen24/iclr2017
 
  * glove
@@ -25,6 +25,9 @@ description: Algorithm
 
   * Pre-Trained Model 可以直接用
     * https://github.com/Kyubyong/wordvectors
+
+  * xx2vec list
+    * https://gist.github.com/nzw0301/333afc00bd508501268fa7bf40cafe4e
 
 * summarization          
     * textteaser  
@@ -70,6 +73,13 @@ https://github.com/haifengl/smile
   * https://github.com/explosion/spaCy
 
 
+## ElasticSearch
+  es有段时间没有看了，最近出了好多插件
+  * feature vector plugin
+    * https://github.com/ginobefun/elasticsearch-feature-vector-scoring
+  * learning to rank plugin
+    * https://github.com/o19s/elasticsearch-learning-to-rank
+
 
 
 ## 图像识别
@@ -84,6 +94,13 @@ https://cloudplatform.googleblog.com/2015/12/Google-Cloud-Vision-API-changes-the
 * 快速聚类
   * http://eric-yuan.me/clustering-fast-search-find-density-peaks/
   * https://gist.github.com/jdeng/d2c538e4cab6dd75bf34
+
+* 快速向量搜索工具
+  * https://github.com/facebookresearch/faiss
+
+* shortText clustering
+  * https://github.com/stephenhky/PyShortTextCategorization
+
 
 * dl on spark
   * https://github.com/amplab/SparkNet

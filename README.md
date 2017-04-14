@@ -22,6 +22,7 @@
 * 分布式神经网络 (Done)
 * regex 那个好像有点忘记了
 * word embedding
+* rnn attention
 
 
 ## Matchp ReadlingList
