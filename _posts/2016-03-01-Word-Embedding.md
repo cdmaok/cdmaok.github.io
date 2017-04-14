@@ -39,5 +39,8 @@ x是一个分布式向量
 
 ### word2vec
 前面的模型相对而言都很复杂，然后出了一个CBOW和Skip-gram模型。
-![skip-gram model](http://7xpv97.com1.z0.glb.clouddn.com/f7190942789f72698eb5593189e2b4e4.png)
-没有很多的计算过程，就是根据上下文关系的softmax
+![word2vec model](http://7xpv97.com1.z0.glb.clouddn.com/3e48c9c7c9b88fefe70f8fdc221c94f2.png)
+没有很复杂的模型，就是单纯的根据上下文关系构造向量。为了工程化这个东西，还有hierarchical softmax 以及negative sampling的技巧。
+
+### para2vec
+和word2vec 基本一样，wordvec 的思想是最大化 p(w| context(w))，para2vec引入了para的feature（一个矩阵D），改成p(w|context(w),para_feature)，然后就一样了。inference的时候（相当于D多了一行），固定其他参数，然后对D重新估计一下就可以了。讲道理这个叫sentence2vec更加合适吧。
