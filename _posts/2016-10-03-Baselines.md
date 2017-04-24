@@ -173,3 +173,6 @@ https://cloudplatform.googleblog.com/2015/12/Google-Cloud-Vision-API-changes-the
 
 * arxiv 代码
   * http://www.gitxiv.com/
+
+* sina 爬虫
+  * https://github.com/jinfagang/weibo_terminater
