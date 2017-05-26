@@ -104,7 +104,9 @@ https://cloudplatform.googleblog.com/2015/12/Google-Cloud-Vision-API-changes-the
 * shortText clustering
   * https://github.com/stephenhky/PyShortTextCategorization
 
-
+* 大规模数据使用gpu进行knn聚类
+  * https://sourceforge.net/projects/gpufsknn/
+  
 * dl on spark
   * https://github.com/amplab/SparkNet
 
