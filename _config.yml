@@ -1,0 +1,19 @@
+### your site title here
+
+title: CDMAOK
+
+baseurl: 
+sass: 
+    style: compressed
+
+
+# Tracker
+analytics: xx
+
+
+exclude:
+- README.md
+
+include: 
+- _pages
+
