@@ -1,6 +1,6 @@
 本文用的主题		
  [Demo](http://webjeda.com/krishna),[github page](https://github.com/sharu725/krishna)		
- 		
+
 
 
  ## Todolist:		
@@ -22,6 +22,11 @@
  * regex 那个好像有点忘记了		
  * word embedding (Done)		
  * rnn attention		
+ * https://pandas.pydata.org/pandas-docs/stable/10min.html
+ * https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python 先看这个！！！
+ * 数据挖掘比赛入门 下载文件里面doc文档(Done)
+ * 两篇论文要看
+ * 达摩流浪者 pdf
 
 
  ## Matchp ReadlingList		
