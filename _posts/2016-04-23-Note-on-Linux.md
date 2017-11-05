@@ -17,7 +17,7 @@ Several Notes on my route to OP
 * centos 查看系统安装的rpm， rpmqa | grep xxx  		
 * swap 0 solution		
 
-```shell		
+```
 	Run **dd if=/dev/zero of=/swapfile bs=1M count=1024**  		
 	Run **mkswap /swapfile**  		
 	Run **swapon /swapfile**  		
@@ -33,7 +33,7 @@ Several Notes on my route to OP
 * 排查crontab问题，如果某个user建立了cron job，那么在**/var/spool/cron/crontabs/ ** 中会找到以这个user命名的文件和他对应执行的命令。  		
 * ubuntu 使用ss  		
 
-```shell		
+```		
 pip install shadowsocks		
 # client的命令是sslocal 服务器端是ssserver		
 sslocalc ~/ss.json-user cdmaokd start		
@@ -51,7 +51,7 @@ sslocald stop
 
 * shell script show the current path:		
 
-```shell		
+```		
 #!/bin/bash		
 basepath=$(cd `dirname $0`; pwd)		
 echo $basepath		
@@ -59,7 +59,7 @@ echo $basepath
 
 *  多版本共存，有的时候机器里面某一个软件多于一个版本，下面以java为例讲解alternative		
 
-```shell		
+```		
 ## 首先去/usr/bin里面看看链接的指向是哪里，如果是指向/ect/alternative才可以这样做		
 update-alternative-config Java		
 ## 然后选择你要的版本即可		
@@ -78,6 +78,37 @@ dump 信息。
 * 学会用parallelpipe 命令， 在管道中可以有效的加速		
 * 'cannot compile python.h' 需要安装python的依赖。		
 
-```shell		
+```		
 sudo apt-get install python2.7-dev		
+```   
+
+* 一些有用的alias别名命令  
+
+```
+alias ll='ls --color -al'
+alias grep='grep --color=auto'
+backup() { cp "$1"{,.bak};}
+## 生成强壮的密码
+alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
+### 这个很棒
+extract() {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
 ```

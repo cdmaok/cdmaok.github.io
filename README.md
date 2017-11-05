@@ -25,8 +25,13 @@
  * https://pandas.pydata.org/pandas-docs/stable/10min.html
  * https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python 先看这个！！！
  * 数据挖掘比赛入门 下载文件里面doc文档(Done)
- * 两篇论文要看
+ * 两篇论文要看(Done)
  * 达摩流浪者 pdf
+ * 我简单讲下2.加入节假日等时间因素的一个处理方法吧。把天气、节日做成连续变量或者0-1变量，做线性回归，用残差做状态空间模型（可以理解为超级版的ARIMA），R里{forecast}包中有个tbats函数，有心的话可以看下这个函数的帮助文档和论文。这样的思路可以用于处理节假日，天气，多周期，不平稳，各种类似的时序问题。 https://www.zhihu.com/question/37698412
+ LSTM 只能用 sigmoid 和 tanh 的
+
+ * 多元时间序列 https://github.com/davidhallac/TICC ​​​​
+
 
 
  ## Matchp ReadlingList		

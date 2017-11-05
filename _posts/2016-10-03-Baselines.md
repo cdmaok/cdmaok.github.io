@@ -81,6 +81,10 @@ https://github.com/haifengl/smile
 * 词向量预训练模型下载工具
   * https://github.com/chakki-works/chakin#supported-vectors
 
+* Character-level Convolutional Networks for Text Classification
+  * https://github.com/zhangxiangxiao/Crepe 
+
+
 
 ## ElasticSearch
   es有段时间没有看了，最近出了好多插件
@@ -191,6 +195,7 @@ https://cloudplatform.googleblog.com/2015/12/Google-Cloud-Vision-API-changes-the
 * 可视化
   * http://bigdata.memect.com/?tag=survey+visualization
   * http://nanocubes.net/
+  * https://policyviz.com/2015/02/17/data-visualization-library/
 
 * 可视化爬虫
   * https://github.com/scrapinghub/portia
