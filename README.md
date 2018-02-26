@@ -32,6 +32,76 @@
 
  * 多元时间序列 https://github.com/davidhallac/TICC ​​​​
 
+ * docker 教程
+
+
+* hidden debt in ml
+  * 机器学习系统中各个特征并不独立，修改每个特征会影响整个系统的表现，一种可能的解决方案是采用集成方法
+  * 还有一种级联的关系，一个model依赖另外一个model的结果，如果修改依赖model，会导致两外一个model的失效，解决方案是将被依赖model的特征直接放进来。
+
+
+* 周志华 twice learning
+
+
+* 百度云api工具 bypy
+
+* vi 配色 set t_Co=256
+
+* 时间序列异常检测
+
+
+时序交叉验证有很多不同的方式，例如有或没有再拟合（refitting）而执行滚动式预测、或者如时序 bootstrap 重采样等更加详细的策略等
+
+LOCF'ed下一个观测数据复制前面的
+
+
+1.是不是可以考虑删掉值为0的部分
+
+1.部分值不能及时到达，频率提高
+2.时效性
+3.新的特征
+4.损失函数
+
+
+kaggle 里面时序评价指标为SMAPE
+
+mape = |预测 - 真实| / 真实
+
+之所以不用mape，是应为这个东西不对称，当预测 = 100，真实 = 150，mape = 0.33
+如果互换值的话，也就是预测 = 150，真实 = 100，mape = 0.5，为了保证对称，所以不再除以真实值，而是真实值和预测值的均值，同时为了保证真实值和预测值的和不会出现抵消或者等于零的情况，同时对二者加上绝对值。
+
+
+学习一下argparse的用法
+
+找到每个序列中非零或者非nan的开始索引和结束索引
+过滤掉太短的时间序列
+然后填充合格的时间序列的nan值为0
+计算年度和季度的自相关系数
+one hot 向量也应该标准化
+
+feature包括；
+有效时间序列，外部特征，总流量，年度自相关，季度自相关，日期向量，
+
+
+
+简单记录一下arima模型
+
+可以分解成三个部分，三个部分分别对应三个参数，p,d,q
+AR --> p , 可以通过自相关系数图的大概人工确定一下
+I --> d, 可以通过观察原来的时序图是否收敛来确定，如果d=0时不收敛，那么可以通过差分d=1,观察是否收敛，逐级递增
+MA --> q, 可以认为跟p类似，但是好像只能设得很小
+
+
+
+总结纲要
+1.画一个大图
+2.
+
+
+tensorflow
+
+进出神经元的称之为tensor，神经元应该是一种运算符号，tensor包括多种，一种是constant变量，一种是placeholder（一般是观察到的变量），还有一种是variable（多为权重，用tf.assign进行赋值）
+
 
 
  ## Matchp ReadlingList		
@@ -44,3 +114,24 @@
  * Tian, Y., Galery,T., Dulcinati, G., Molimpakis, E., & Sun, C. (2017). Facebook emotions:Reactions and Emojis. In Proceedings of the EACL 2017 Workshop on NaturalLanguage Processing for Social Media (SocialNLP).		
 
  * Zhao, J., Dong, L., Wu, J., & Xu, K.(2012). MoodLens: An EmoticonBased Sentiment Analysis System for ChineseTweets. Proceedings of the 18th ACM SIGKDD International Conference onKnowledge Discovery and Data Mining  KDD ’12, 1528–1531. https://doi.org/10.1145/2339530.2339772
+
+
+
+
+ ## ML con & dis
+
+ Name	| Methodology	| What’s right	|What’s wrong
+ --| --| --|--
+Bayesian Learning	|You specify a prior probability distribution over data-makers, P(datamaker) then use Bayes law to find a posterior P(datamaker_x). True Bayesians integrate over the posterior to make predictions while many simply use the world with largest posterior directly.	|Handles the small data limit. Very flexible. Interpolates to engineering.	| Information theoretically problematic. Explicitly specifying a reasonable prior is often hard. Computationally difficult problems are commonly encountered.Human intensive. Partly due to the difficulties above and partly because “first specify a prior” is built into framework this approach is not very automatable.
+Graphical/generative Models	| Sometimes Bayesian and sometimes not. Data-makers are typically assumed to be IID samples of fixed or varying length data. Data-makers are represented graphically with conditional independencies encoded in the graph. For some graphs, fast algorithms for making (or approximately making) predictions exist.	| Relative to pure Bayesian systems, this approach is sometimes computationally tractable. More importantly, the graph language is natural, which aids prior elicitation.	|Often (still) fails to fix problems with the Bayesian approach.In real world applications, true conditional independence is rare, and results degrade rapidly with systematic misspecification of conditional independence.
+Convex Loss Optimization | Specify a loss function related to the world-imposed loss fucntion which is convex on some parametric predictive system. Optimize the parametric predictive system to find the global optima.|	Mathematically clean solutions where computational tractability is partly taken into account. Relatively automatable.|	The temptation to forget that the world imposes nonconvex loss functions is sometimes overwhelming, and the mismatch is always dangerous.Limited models. Although switching to a convex loss means that some optimizations become convex, optimization on representations which aren’t single layer linear combinations is often difficult.
+Gradient Descent	| Specify an architecture with free parameters and use gradient descent with respect to data to tune the parameters.|	Relatively computationally tractable due to (a) modularity of gradient descent (b) directly optimizing the quantity you want to predict.	|Finicky. There are issues with paremeter initialization, step size, and representation. It helps a great deal to have accumulated experience using this sort of system and there is little theoretical guidance. Overfitting is a significant issue.
+Kernel-based learning|	You chose a kernel K(x,x’) between datapoints that satisfies certain conditions, and then use it as a measure of similarity when learning.|People often find the specification of a similarity function between objects a natural way to incorporate prior information for machine learning problems. Algorithms (like SVMs) for training are reasonably practical—O(n2) for instance.|	Specification of the kernel is not easy for some applications (this is another example of prior elicitation). O(n2) is not efficient enough when there is much data.
+Boosting| You create a learning algorithm that may be imperfect but which has some predictive edge, then apply it repeatedly in various ways to make a final predictor.| A focus on getting something that works quickly is natural. This approach is relatively automated and (hence) easy to apply for beginners.| The boosting framework tells you nothing about how to build that initial algorithm. The weak learning assumption becomes violated at some point in the iterative process.
+Online Learning with Experts| You make many base predictors and then a master algorithm automatically switches between the use of these predictors so as to minimize regret.	| This is an effective automated method to extract performance from a pool of predictors.	| Computational intractability can be a problem. This approach lives and dies on the effectiveness of the experts, but it provides little or no guidance in their construction.
+Learning Reductions	| You solve complex machine learning problems by reducing them to well-studied base problems in a robust manner.|	The reductions approach can yield highly automated learning algorithms.	| The existence of an algorithm satisfying reduction guarantees is not sufficient to guarantee success. Reductions tell you little or nothing about the design of the base learning algorithm.
+PAC Learning	| You assume that samples are drawn IID from an unknown distribution D. You think of learning as finding a near-best hypothesis amongst a given set of hypotheses in a computationally tractable manner.	| The focus on computation is pretty right-headed, because we are ultimately limited by what we can compute.	| There are not many substantial positive results, particularly when D is noisy. Data isn’t IID in practice anyways.
+Statistical Learning Theory|	You assume that samples are drawn IID from an unknown distribution D. You think of learning as figuring out the number of samples required to distinguish a near-best hypothesis from a set of hypotheses.|	There are substantially more positive results than for PAC Learning, and there are a few examples of practical algorithms directly motivated by this analysis.	| The data is not IID. Ignorance of computational difficulties often results in difficulty of application. More importantly, the bounds are often loose (sometimes to the point of vacuousness).
+Decision tree learning	| Learning is a process of cutting up the input space and assigning predictions to pieces of the space.	Decision tree algorithms are well automated and can be quite fast.	There are learning problems which can not be solved by decision trees, but which are solvable. It’s common to find that other approaches give you a bit more performance. A theoretical grounding for many choices in these algorithms is lacking.Algorithmic complexity	Learning is about finding a program which correctly predicts the outputs given the inputs.	| Any reasonable problem is learnable with a number of samples related to the description length of the program.	| The theory literally suggests solving halting problems to solve machine learning.
+RL, MDP learning	| Learning is about finding and acting according to a near optimal policy in an unknown Markov Decision Process.| We can learn and act with an amount of summed regret related to O(SA) where S is the number of states and A is the number of actions per state.|	Has anyone counted the number of states in real world problems? We can’t afford to wait that long. Discretizing the states creates a POMDP (see below). In the real world, we often have to deal with a POMDP anyways.
+RL, POMDP learning	| Learning is about finding and acting according to a near optimaly policy in a Partially Observed Markov Decision Process	| In a sense, we’ve made no assumptions, so algorithms have wide applicability.|	All known algorithms scale badly with the number of hidden states.
