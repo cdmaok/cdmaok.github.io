@@ -22,17 +22,14 @@
  * regex 那个好像有点忘记了		
  * word embedding (Done)		
  * rnn attention		
- * https://pandas.pydata.org/pandas-docs/stable/10min.html
  * https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python 先看这个！！！
- * 数据挖掘比赛入门 下载文件里面doc文档(Done)
- * 两篇论文要看(Done)
  * 达摩流浪者 pdf
  * 我简单讲下2.加入节假日等时间因素的一个处理方法吧。把天气、节日做成连续变量或者0-1变量，做线性回归，用残差做状态空间模型（可以理解为超级版的ARIMA），R里{forecast}包中有个tbats函数，有心的话可以看下这个函数的帮助文档和论文。这样的思路可以用于处理节假日，天气，多周期，不平稳，各种类似的时序问题。 https://www.zhihu.com/question/37698412
  LSTM 只能用 sigmoid 和 tanh 的
 
  * 多元时间序列 https://github.com/davidhallac/TICC ​​​​
 
- * docker 教程
+ * docker 教程 (Half Done)
 
 
 * hidden debt in ml
@@ -42,6 +39,7 @@
 
 * 周志华 twice learning
 
+* t-SNE 降维方法
 
 * 百度云api工具 bypy
 
@@ -62,6 +60,8 @@ LOCF'ed下一个观测数据复制前面的
 3.新的特征
 4.损失函数
 
+
+bokeh python 交互式可视化库
 
 kaggle 里面时序评价指标为SMAPE
 
@@ -102,7 +102,8 @@ tensorflow
 
 进出神经元的称之为tensor，神经元应该是一种运算符号，tensor包括多种，一种是constant变量，一种是placeholder（一般是观察到的变量），还有一种是variable（多为权重，用tf.assign进行赋值）
 
-
+import numba
+@numba.jit
 
  ## Matchp ReadlingList		
  * http://getdango.com/emojianddeeplearning/ 基本是用RNN训练emoji		
