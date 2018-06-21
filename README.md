@@ -84,12 +84,16 @@ feature包括；
 
 
 
+
+银行有很多顾客排队办业务，有两个窗口，现在有两个选项。一是让顾客排成一队，哪个窗口空闲就接待下一位客户；二是让顾客分别在两个窗口前排队，共排两条队。这两个选项中，哪一个方案能使顾客的平均等待时间最短？ 这就是Poisson distribution的一个应用。
+Google S2
+
 简单记录一下arima模型
 
 可以分解成三个部分，三个部分分别对应三个参数，p,d,q
 AR --> p , 可以通过自相关系数图的大概人工确定一下
 I --> d, 可以通过观察原来的时序图是否收敛来确定，如果d=0时不收敛，那么可以通过差分d=1,观察是否收敛，逐级递增
-MA --> q, 可以认为跟p类似，但是好像只能设得很小
+MA --> q, moving average,就是前面多少项的滑动平均
 
 
 
@@ -136,3 +140,67 @@ Statistical Learning Theory|	You assume that samples are drawn IID from an unkno
 Decision tree learning	| Learning is a process of cutting up the input space and assigning predictions to pieces of the space.	Decision tree algorithms are well automated and can be quite fast.	There are learning problems which can not be solved by decision trees, but which are solvable. It’s common to find that other approaches give you a bit more performance. A theoretical grounding for many choices in these algorithms is lacking.Algorithmic complexity	Learning is about finding a program which correctly predicts the outputs given the inputs.	| Any reasonable problem is learnable with a number of samples related to the description length of the program.	| The theory literally suggests solving halting problems to solve machine learning.
 RL, MDP learning	| Learning is about finding and acting according to a near optimal policy in an unknown Markov Decision Process.| We can learn and act with an amount of summed regret related to O(SA) where S is the number of states and A is the number of actions per state.|	Has anyone counted the number of states in real world problems? We can’t afford to wait that long. Discretizing the states creates a POMDP (see below). In the real world, we often have to deal with a POMDP anyways.
 RL, POMDP learning	| Learning is about finding and acting according to a near optimaly policy in a Partially Observed Markov Decision Process	| In a sense, we’ve made no assumptions, so algorithms have wide applicability.|	All known algorithms scale badly with the number of hidden states.
+
+insert into Student values('02' , 'qiandian' , '1990-12-21' , 'female');
+insert into Student values('03' , 'sunfeng' , '1990-05-20' , 'female');
+insert into Student values('04' , 'liyun' , '1990-08-06' , 'female');
+insert into Student values('05' , 'zhoumei' , '1991-12-01' , 'male');
+insert into Student values('06' , 'wulan' , '1992-03-01' , 'male');
+insert into Student values('07' , 'zhengzhu' , '1989-07-01' , 'male');
+insert into Student values('09' , 'zhangsan' , '2017-12-20' , 'male');
+insert into Student values('10' , 'lisi' , '2017-12-25' , 'male');
+insert into Student values('11' , 'lisi' , '2017-12-30' , 'male');
+insert into Student values('12' , 'zhaoliu' , '2017-01-01' , 'male');
+insert into Student values('13' , 'sunqi' , '2018-01-01' , 'male');
+
+
+create table Course(CId varchar(10),Cname nvarchar(10),TId varchar(10));
+insert into Course values('01' , 'chinese' , '02');
+insert into Course values('02' , 'maths' , '01');
+insert into Course values('03' , 'english' , '03');
+
+
+create table Teacher(TId varchar(10),Tname varchar(10));
+insert into Teacher values('01' , 'zhangsan');
+insert into Teacher values('02' , 'lisi');
+insert into Teacher values('03' , 'wangwu');
+
+
+
+create table SC(SId varchar(10),CId varchar(10),score decimal(18,1));
+insert into SC values('01' , '01' , 80);
+insert into SC values('01' , '02' , 90);
+insert into SC values('01' , '03' , 99);
+insert into SC values('02' , '01' , 70);
+insert into SC values('02' , '02' , 60);
+insert into SC values('02' , '03' , 80);
+insert into SC values('03' , '01' , 80);
+insert into SC values('03' , '02' , 80);
+insert into SC values('03' , '03' , 80);
+insert into SC values('04' , '01' , 50);
+insert into SC values('04' , '02' , 30);
+insert into SC values('04' , '03' , 20);
+insert into SC values('05' , '01' , 76);
+insert into SC values('05' , '02' , 87);
+insert into SC values('06' , '01' , 31);
+insert into SC values('06' , '03' , 34);
+insert into SC values('07' , '02' , 89);
+insert into SC values('07' , '03' , 98);
+
+
+
+--1.学生表
+Student(SId,Sname,Sage,Ssex)
+--SId 学生编号,Sname 学生姓名,Sage 出生年月,Ssex 学生性别
+
+--2.课程表
+Course(CId,Cname,TId)
+--CId 课程编号,Cname 课程名称,TId 教师编号
+
+--3.教师表
+Teacher(TId,Tname)
+--TId 教师编号,Tname 教师姓名
+
+--4.成绩表
+SC(SId,CId,score)
+--SId 学生编号,CId 课程编号,score 分数

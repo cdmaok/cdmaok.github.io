@@ -8,6 +8,7 @@ categories:
 
 * 介绍一下SVM
   面向数据分类算法，确定一个超平面，从而将不同的数据分割开。 损失函数是hinge Loss
+  一个终于让我看懂的blog http://blog.sina.com.cn/s/blog_4298002e010144k8.html
 
 * 介绍一下tensorflow的计算图
   分成两个部分，define and run，构造部分，计算流图，然后通过session执行图中的计算。

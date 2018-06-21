@@ -82,7 +82,7 @@ https://github.com/haifengl/smile
   * https://github.com/chakki-works/chakin#supported-vectors
 
 * Character-level Convolutional Networks for Text Classification
-  * https://github.com/zhangxiangxiao/Crepe 
+  * https://github.com/zhangxiangxiao/Crepe
 
 
 
@@ -177,6 +177,13 @@ https://cloudplatform.googleblog.com/2015/12/Google-Cloud-Vision-API-changes-the
   * https://snap.stanford.edu/data/
 
 
+* 股票数据集
+  * https://github.com/waditu/Tushare
+
+* 用于过滤敏感词的实用模块
+  * https://github.com/observerss/textfilter
+
+
 
 ## 推荐系统
 * 源码 Predict.io
@@ -212,3 +219,13 @@ https://cloudplatform.googleblog.com/2015/12/Google-Cloud-Vision-API-changes-the
 
 * hadoop 导入工具
   * mysqluldr2
+
+* python 绘图工具
+  * https://github.com/pyecharts/pyecharts
+
+* 【可视化降维Python工具包】#Github开源项目# HyperTools 是一个具有可视化功能的降维工具包，其基本流程是输入高维数据，调用降维函数，同时进行绘图。
+  * https://github.com/ContextLab/hypertools
+
+* xlearn   High Performance, Easy-to-use, and Scalable Machine Learning Package (C++, Python, R)
+  * https://github.com/aksnzhy/xlearn
+  
