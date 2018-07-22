@@ -204,3 +204,4 @@ Teacher(TId,Tname)
 --4.成绩表
 SC(SId,CId,score)
 --SId 学生编号,CId 课程编号,score 分数
+
