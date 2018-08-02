@@ -141,3 +141,12 @@ Fisher 准则 ：更广泛的称呼是线性判别分析（LDA），将所有样
 * bagging & boosting
 bagging 均匀采样，各个预测函数没有权重，可以并行
 boosting 按照错误率采样，各个预测函数有权重，无法并行。
+
+
+* HDFS 架构
+  - NameNode master节点，管理hdfs的名称空间，管理数据块映射信息，配置副本策略，处理客户端读写请求，保存两份文件，一份是元数据镜像文件，一份是元数据操作日志。
+  - DataNode slave 节点，存储实际的读写块，执行数据块读写。
+  - Client 文件切分，与NameNode交互，获取文件位置信息，与DataNode交互，读取或者写入数据，管理与访问HDFS
+  - Secondary NameNode，并非NameNode的热备份，辅助NameNode，分担其工作量，可辅助恢复NameNode
+  - 
+
