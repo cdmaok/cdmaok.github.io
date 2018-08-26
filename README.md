@@ -101,6 +101,8 @@ MA --> q, moving average,就是前面多少项的滑动平均
 1.画一个大图
 2.
 
+spark 容错机制
+
 
 tensorflow
 
