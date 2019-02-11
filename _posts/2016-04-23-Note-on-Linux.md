@@ -17,7 +17,7 @@ Several Notes on my route to OP
 * centos 查看系统安装的rpm， rpmqa | grep xxx  		
 * swap 0 solution		
 
-```
+```shell
 	Run **dd if=/dev/zero of=/swapfile bs=1M count=1024**  		
 	Run **mkswap /swapfile**  		
 	Run **swapon /swapfile**  		
@@ -33,11 +33,11 @@ Several Notes on my route to OP
 * 排查crontab问题，如果某个user建立了cron job，那么在**/var/spool/cron/crontabs/ ** 中会找到以这个user命名的文件和他对应执行的命令。  		
 * ubuntu 使用ss  		
 
-```		
+```shell		
 pip install shadowsocks		
 # client的命令是sslocal 服务器端是ssserver		
-sslocalc ~/ss.json-user cdmaokd start		
-sslocald stop		
+sslocal ~/ss.json-user cdmaok start		
+sslocal stop		
 # 在/var/log/shadowsocks.log中排查错误		
 ```		
 
@@ -51,7 +51,7 @@ sslocald stop
 
 * shell script show the current path:		
 
-```		
+```shell		
 #!/bin/bash		
 basepath=$(cd `dirname $0`; pwd)		
 echo $basepath		
@@ -78,13 +78,14 @@ dump 信息。
 * 学会用parallelpipe 命令， 在管道中可以有效的加速		
 * 'cannot compile python.h' 需要安装python的依赖。		
 
-```		
+```shell		
 sudo apt-get install python2.7-dev		
+sudo yum install python-devel
 ```   
 
 * 一些有用的alias别名命令  
 
-```
+```shell
 alias ll='ls --color -al'
 alias grep='grep --color=auto'
 backup() { cp "$1"{,.bak};}

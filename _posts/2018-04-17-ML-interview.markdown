@@ -148,5 +148,34 @@ boosting 按照错误率采样，各个预测函数有权重，无法并行。
   - DataNode slave 节点，存储实际的读写块，执行数据块读写。
   - Client 文件切分，与NameNode交互，获取文件位置信息，与DataNode交互，读取或者写入数据，管理与访问HDFS
   - Secondary NameNode，并非NameNode的热备份，辅助NameNode，分担其工作量，可辅助恢复NameNode
-  - 
+  - 所有的文件无论大小都被拆成100M左右，为了让所有的机器负载均衡
+  - Namenode 中的数据块映射信息block主要是放在内存中，所有的操作日志会持久化，还有定时快照，便于快速恢复，另外二级Namenode会不断的读取载入镜像。
+  - 常用命令：
+    $ hdfs dfs -usage
+    $ hdfs dfs -ls -mkdir -du -df -rm
+    $ hdfs dfs -put localfile hadoop_file ,看了一下好像都可以写相对路径，hadoop_file 不需要带hdfs://前缀
+    $ hdfs dfs -get src_file dst_file
+    $ hdfs dfs -setrep -w 2 xx.file 手动设置xx.file的备份数量
+    $ hdfs dfs -fsck xx.file -files -blocks -locations 检查xx.file 在dfs中的文件大小位置
+    $ hdfs dfs -getmerge hadoop_file local_file 把hadoop中某个文件夹的内容合成一个文件放到本地
+    $ hdfs namenode
+    $ hdfs datanode
+  - hdfs中的数据类型大致分成两种，一种是文本，csv,tsv,json,xml等，另外一种是二进制的，例如sequence file（对java友好），arvo（二进制版本json），RCfile，Parquet（列式存储）
 
+
+
+* 中文分词
+  中文分词的基本方法包括基于语义规则的方法，基于词典的方法，基于统计的方法
+  - 基于语义规则的方法需要进行词法分析等，相对的使用较少
+  - 基于词典的方法可以进一步划分未最大匹配法，最大概率法，最短路径法。最大匹配法是指按照一定顺序选取字符串中的若干字当作一个词再词典中查找，根据查找方法包括：最大正向匹配，最大反向匹配，双向最大匹配，最小切分等。最大概率是指一个字符串有多种切分方式，取概率最大的一组作为其结果，最短路径是指在词图上选择一条词最少的路径。
+  - 基于统计的方法是根据字符串在语料库中出现的统计频率来决定其是否成词，字和字之间共现的频率越高，他们成为词的可信度越高，常见的方法有HMM，MEMM（最大熵隐马尔科夫模型），CRF
+
+不平衡问题中，准确率召回率容易出问题，而由此衍生的都考虑到这个问题。
+
+
+
+* svm & lr
+  - loss function 不同，svm是hinge loss，lr是cross entropy loss
+  - lr 可以给出每个点属于每一个类的概率，svm不可以
+  - svm只考虑决策边界附近的点，lr考虑全量的点（更容易受噪音数据影响）
+  - 

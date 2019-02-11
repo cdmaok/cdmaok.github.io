@@ -143,67 +143,15 @@ Decision tree learning	| Learning is a process of cutting up the input space and
 RL, MDP learning	| Learning is about finding and acting according to a near optimal policy in an unknown Markov Decision Process.| We can learn and act with an amount of summed regret related to O(SA) where S is the number of states and A is the number of actions per state.|	Has anyone counted the number of states in real world problems? We can’t afford to wait that long. Discretizing the states creates a POMDP (see below). In the real world, we often have to deal with a POMDP anyways.
 RL, POMDP learning	| Learning is about finding and acting according to a near optimaly policy in a Partially Observed Markov Decision Process	| In a sense, we’ve made no assumptions, so algorithms have wide applicability.|	All known algorithms scale badly with the number of hidden states.
 
-insert into Student values('02' , 'qiandian' , '1990-12-21' , 'female');
-insert into Student values('03' , 'sunfeng' , '1990-05-20' , 'female');
-insert into Student values('04' , 'liyun' , '1990-08-06' , 'female');
-insert into Student values('05' , 'zhoumei' , '1991-12-01' , 'male');
-insert into Student values('06' , 'wulan' , '1992-03-01' , 'male');
-insert into Student values('07' , 'zhengzhu' , '1989-07-01' , 'male');
-insert into Student values('09' , 'zhangsan' , '2017-12-20' , 'male');
-insert into Student values('10' , 'lisi' , '2017-12-25' , 'male');
-insert into Student values('11' , 'lisi' , '2017-12-30' , 'male');
-insert into Student values('12' , 'zhaoliu' , '2017-01-01' , 'male');
-insert into Student values('13' , 'sunqi' , '2018-01-01' , 'male');
-
-
-create table Course(CId varchar(10),Cname nvarchar(10),TId varchar(10));
-insert into Course values('01' , 'chinese' , '02');
-insert into Course values('02' , 'maths' , '01');
-insert into Course values('03' , 'english' , '03');
-
-
-create table Teacher(TId varchar(10),Tname varchar(10));
-insert into Teacher values('01' , 'zhangsan');
-insert into Teacher values('02' , 'lisi');
-insert into Teacher values('03' , 'wangwu');
+EMD vs FFT
+While EMD, Fourier, and wavelets are all used to decompose signals, EMD is fundamentally different from the other two. With both the Fourier and Wavelet transforms, one selects a set of basis signal components and then calculates the parameters for each of these signals such that the their aggregate will compose the original signal. The Fourier transform specifically uses sinusoids (and calculates the amplitude and phase offset for each) while the wavelet transform uses other more complex and orthogonal wave-forms.
+On the other hand, EMD makes no assumptions a priori about the composition of the signal. Rather, it uses spline interpolation between maxima and minima to successively trace out "Intrinsic Mode Functions". Each IMF will be a single periodic oscillator, but otherwise cannot be predicted before it is empirically observed from the signal. Also, the number of IMFs cannot be predicted before the decomposition. These two disadvantages can make EMD difficult to work with under certain circumstances.
+However, since it makes no assumptions about signal, the results *might* be more meaningful. Also, since the IMFs can change over time, EMD makes no assumptions about the stationarity of the signal (or the signal components) and is therefore better suited to non-linear signals than either Fourier or Wavelets. This makes EMD particularly attractive when analyzing signals from complex systems; for instance in bio-signal analysis.
+Another point of care is that, to the best of my knowledge, there isn't a standardized online (streaming) solution for EMD yet. The difficulties with such a technique derive from the unpredictable number of IMFs per decomposition and the end-effects caused by the spline interpolation. The end-effects can usually be dealt with by buffering the data stream. The number of IMFs is an insurmountable problem for basic EMD, since each successive time window may have a different number of IMFs and, even if they don't, the IMFs from one window are unlikely to align with those from the next.
+Since Wavelets (like Fourier) have a constant number of basis components, they are currently much better suited to online decomposition.
 
 
 
-create table SC(SId varchar(10),CId varchar(10),score decimal(18,1));
-insert into SC values('01' , '01' , 80);
-insert into SC values('01' , '02' , 90);
-insert into SC values('01' , '03' , 99);
-insert into SC values('02' , '01' , 70);
-insert into SC values('02' , '02' , 60);
-insert into SC values('02' , '03' , 80);
-insert into SC values('03' , '01' , 80);
-insert into SC values('03' , '02' , 80);
-insert into SC values('03' , '03' , 80);
-insert into SC values('04' , '01' , 50);
-insert into SC values('04' , '02' , 30);
-insert into SC values('04' , '03' , 20);
-insert into SC values('05' , '01' , 76);
-insert into SC values('05' , '02' , 87);
-insert into SC values('06' , '01' , 31);
-insert into SC values('06' , '03' , 34);
-insert into SC values('07' , '02' , 89);
-insert into SC values('07' , '03' , 98);
+Cousera 笔记
 
-
-
---1.学生表
-Student(SId,Sname,Sage,Ssex)
---SId 学生编号,Sname 学生姓名,Sage 出生年月,Ssex 学生性别
-
---2.课程表
-Course(CId,Cname,TId)
---CId 课程编号,Cname 课程名称,TId 教师编号
-
---3.教师表
-Teacher(TId,Tname)
---TId 教师编号,Tname 教师姓名
-
---4.成绩表
-SC(SId,CId,score)
---SId 学生编号,CId 课程编号,score 分数
-
+置信区间和boostrap
