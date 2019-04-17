@@ -83,9 +83,9 @@ cat xx | mapper_script | sort | reducer_script 进行测试
 
 ## 代码推测执行，有时候执行到最后一两个节点会陷入很长的等待，speculation execute(推测执行)可以把剩余的任务切换到其他节点执行,将变量制成true（默认是true）
 yarn jar $HADOOP_STREAMING_JAR -D mapreduce.map.speculative="true" \
-                               -D mapreduce.job.speculative-cap-running-tasks=0.99 \
-                               -D mapreduce.job.specualtive-cap-total-tasks=0.99\
-                               -D mapreduce.job.specualtive.retry-after-no-time=10 
+-D mapreduce.job.speculative-cap-running-tasks=0.99 \
+-D mapreduce.job.specualtive-cap-total-tasks=0.99\
+-D mapreduce.job.specualtive.retry-after-no-time=10 
 -files mapper.py,reducer.sh -D variable_name="variable_value" -mapper 'python mapper.py' -reducer './reducer.sh' -combiner './reducer.sh' -numReduceTasks 1 -input /data/wiki/en_articles -output wc_mr_with_reducer
 ```
 

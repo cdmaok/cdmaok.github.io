@@ -26,14 +26,35 @@ categories:
 
 * LR 和 SVM的区别
   相同：都是分类算法，可以添加各种正则项
-  不同：损失函数不一样，svm是hinge loss，只考虑了分类最相关的少数点,比较不好理解，转化为对偶为题后，只需要计算与少数几个支持向量的距离，简化计算，支持多种核函数，，lr是对数损失函数，好理解。
+  不同：
+    - 损失函数不一样，svm是hinge loss，只考虑了分类最相关的少数点,比较不好理解，转化为对偶为题后，只需要计算与少数几个支持向量的距离，简化计算，支持多种核函数，，lr是对数损失函数，好理解。
+    - lr 可以给出每个点属于每一个类的概率，svm不可以
+    - svm只考虑决策边界附近的点，lr考虑全量的点（更容易受噪音数据影响）
 
 * 决策树，RF，Boosting 和 Adaboost，GBDT和xgboost的区别
-  决策树：Cart4.3 ID3
-  RF：包含多个决策树
-  Adaboost: 自适应增强
-  GDBT：融合决策树和梯度上升boosting算法
-  xgboost:GBDT的提升，损失函数是泰勒展开二项逼近，不是一阶导数，树进行了优化，之所以这样做可以不限定损失函数。
+  决策树：
+    1. 将所有的数据看成一个节点，进入2
+    2. 从所有特征中挑选一个特征对节点进行分割，进入3
+    3. 生成若干节点，对每个节点进行判断，如果满足停止分裂的条件，进入4，否则进入2
+    4. 设置该节点为节点，输出大多数类标号。
+
+  决策树：
+  - Cart4.3(使用信息增益率 $$Info_Gain = Entropy / \sum_i (p_i * Entropy_i)$$ + 剪枝)  
+  - ID3（使用指标为信息增益 $$Info_Gain = Entropy - \sum_i (p_i * Entropy_i)$$）
+  **RF**：包含多个决策树
+  **Adaboost**: 自适应增强
+  **GDBT**：融合决策树和梯度上升boosting算法,在不破坏原来每颗树的基础上增加模型，但是并不基于全部数据，这样对数据较为敏感。而是改用gradient boost。和rf相比，全是回归树，分类问题的话，将label转成对某一个类的概率值，rf抗噪，多数据格式 
+  具体流程如下：
+  1. 算法每次生成一个新的决策树
+  2. 在每次迭代之前，计算损失函数在数据集上的导数
+  3. 通过贪心策略生成新的树（使用了导数作为目标，不是普通的信息增益等），并计算每个叶节点的值
+  4. 将新生成的决策树加入到模型中去
+   
+  **xgboost**:GBDT的提升，损失函数是泰勒展开二项逼近，不是一阶导数，树进行了优化，之所以这样做可以不限定损失函数。  
+
+* bagging && boosting
+  - bagging: 从源数据集中有放回的抽样K个子集，每个子集可以生成一个模型，最后投票得到最终结果，可以并行
+  - boosting:每次都是同一个数据集，但是每个样本在新的训练集上的权重会发生改变，每个模型最后的权重不一样，只能串行。
 
 * 判别式模型和生成式模型
   判别式：直接通过函数进行判断，
@@ -120,8 +141,8 @@ categories:
 
 
   * 深度学习方法脉络
-  DNN全连接 --> 解决全连接 CNN，--> 解决时许问题 rnn --> 解决梯度消失问题 --> lstm
-  sigmoid会饱和，造成梯度消失。于是有了ReLU
+  DNN全连接 --> 解决全连接 CNN，--> 解决时序问题 rnn --> 解决梯度消失问题 --> lstm
+  sigmoid会饱和，（对sigmoid 求导的时候基本为0）造成梯度消失。于是有了ReLU
 ReLU负半轴是死区，造成梯度变0。于是有了LeakyReLU，PReLU。
 强调梯度和权值分布的稳定性，由此有了ELU，以及较新的SELU。
 太深了，梯度传不下去，于是有了highway。
@@ -151,6 +172,7 @@ boosting 按照错误率采样，各个预测函数有权重，无法并行。
   - 所有的文件无论大小都被拆成100M左右，为了让所有的机器负载均衡
   - Namenode 中的数据块映射信息block主要是放在内存中，所有的操作日志会持久化，还有定时快照，便于快速恢复，另外二级Namenode会不断的读取载入镜像。
   - 常用命令：
+  ```shell
     $ hdfs dfs -usage
     $ hdfs dfs -ls -mkdir -du -df -rm
     $ hdfs dfs -put localfile hadoop_file ,看了一下好像都可以写相对路径，hadoop_file 不需要带hdfs://前缀
@@ -160,6 +182,7 @@ boosting 按照错误率采样，各个预测函数有权重，无法并行。
     $ hdfs dfs -getmerge hadoop_file local_file 把hadoop中某个文件夹的内容合成一个文件放到本地
     $ hdfs namenode
     $ hdfs datanode
+  ```
   - hdfs中的数据类型大致分成两种，一种是文本，csv,tsv,json,xml等，另外一种是二进制的，例如sequence file（对java友好），arvo（二进制版本json），RCfile，Parquet（列式存储）
 
 
@@ -172,10 +195,21 @@ boosting 按照错误率采样，各个预测函数有权重，无法并行。
 
 不平衡问题中，准确率召回率容易出问题，而由此衍生的都考虑到这个问题。
 
+* xgboost 调参技巧
 
 
-* svm & lr
-  - loss function 不同，svm是hinge loss，lr是cross entropy loss
-  - lr 可以给出每个点属于每一个类的概率，svm不可以
-  - svm只考虑决策边界附近的点，lr考虑全量的点（更容易受噪音数据影响）
-  - 
+>> 1. Choose a relatively high learning rate. Generally a learning rate of 0.1 works but somewhere between 0.05 to 0.3 should work for different problems. Determine the optimum number of trees for this learning rate. XGBoost has a very useful function called as “cv” which performs cross-validation at each boosting iteration and thus returns the optimum number of trees required.
+>> 2. une tree-specific parameters ( max_depth, min_child_weight, gamma, subsample, colsample_bytree) for decided learning rate and number of trees. Note that we can choose different parameters to define a tree and I’ll take up an example here.
+>> 3. Tune regularization parameters (lambda, alpha) for xgboost which can help reduce model complexity and enhance performance.
+>> 4. Lower the learning rate and decide the optimal parameters .
+
+1. 在高学习率下把xgboost树的数量顶下
+2. 再调树相关的参数，深度，子权重，gamma等
+3. 调整正则化参数
+4. 缩放学习率
+
+
+gurobi
+
+1. count 设置一个indicator变量然后求和
+2. index 先设置一个indicator 变量，然后 prod range(length) , 然后取min 或者max 值

@@ -9,4 +9,10 @@ categories:
 1. 为了加速通常会使用mini batch 方法，主要是因为dnn是一个非凸函数的性质，如果使用全局的数据进行训练，通常会陷入局部最优，通常会使用小的batch进行训练，参考 https://zhuanlan.zhihu.com/p/27349632?utm_medium=social&utm_source=weibo
 2. 在训练过程中需要用到归一化这个事情，但是要对整个数据集进行归一化，但这个事情不现实，通常拿不到整个数据集的均值和方差(???),所以使用batch normalization进行，即使用每个batch所的得到的均值和方差进行训练。参考http://blog.csdn.net/elaine_bao/article/details/50890491, 有一种说法是weight normalization效果更好
 
-3.
+
+调参过程
+1. 搭建简单模型
+2. 成功重现结果
+3. 分解各项偏差，逐步拟合数据 测试集错误率 = 错误率下限 + 偏移 + 方差 + 分布偏差 + 验证集过拟合
+4. 由粗到细随机搜索超参
+5. 欠拟合增大模型，过拟合就添加数据或调整
