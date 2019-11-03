@@ -40,4 +40,20 @@ From 《推荐系统实践》
 
 ![route recsys](http://7xpv97.com1.z0.glb.clouddn.com/7464038f4a07c0b62ca87ddcb0355f16.png)
 
-[CF-compare]:xxxx
+
+
+大型的推荐系统通常分成两个部分，一个部分是召回，另外一个部分是排序
+
+1.决定维度的三种方案，一种是属性值，一种是统计值，一种是embedding之后的向量
+
+
+文本结构化算法
+1. 关键词提取 TF-IDF,TextRank
+2. 实体识别 基于词典的方法结合CRF模型  主要是用 spacy 或者nltk
+3. 内容分类体系，根据已有的分类树进行构造  短文本主要使用svm，或者是facebook开源的fasttext
+4. 文本聚类 相对较少主要被lda取代
+5. 主题模型 gensim plda
+6. 词嵌入   word2vec glove
+   
+对上述选择出来的文本进行特征选择，主要是有监督算法，例如卡方检验，信息熵等
+
