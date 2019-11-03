@@ -2,8 +2,7 @@
 layout: post
 title:  Time series forcast
 description: time series forcast
-categories:
--blog
+categories: blog
 ---
 
 

@@ -2,8 +2,7 @@
 layout: post
 title:  计算广告
 description: 计算广告笔记
-categories:
--blog
+categories: blog
 ---
 
 

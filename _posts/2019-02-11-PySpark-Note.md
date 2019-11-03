@@ -2,8 +2,7 @@
 layout: post
 title:  Spark Example
 description: spark example
-categories:
--blog
+categories: blog
 ---
 
 

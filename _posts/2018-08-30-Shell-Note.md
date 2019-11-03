@@ -2,8 +2,7 @@
 layout: post
 title:  Shell Note
 description: Shell Script
-categories:
--blog
+categories: blog
 ---
 
 以下是一些关于shell脚本的建议

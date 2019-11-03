@@ -1,10 +1,8 @@
 ---
----
 layout: post
 title:  Investment
 description: Investment From zhihu
-categories:
--blog
+categories: blog
 ---
 
 1. 中国进出口总额从1990年的5560.1亿上升到2017年的27.79万亿，进出口总额上升了近50倍

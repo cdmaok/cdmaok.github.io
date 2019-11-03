@@ -2,8 +2,7 @@
 layout: post
 title:  Nerual-Network-big-corpus
 description: big corpus on nerual network
-categories:
-- blog
+categories: blog
 ---
 
 本文记录如何在大规模语料上进行神经网络的训练。参考<LDA-big-corpus>这篇文章，要在大规模文本上面训练模型，有两个思路，一个是对模型参数进行分布式，一个是对数据进行分布式处理。

@@ -2,8 +2,7 @@
 layout: post
 title:  "Item Measurement Function"
 description: different measurement about items' similarity
-categories:
-- blog
+categories: blog
 ---
 
 

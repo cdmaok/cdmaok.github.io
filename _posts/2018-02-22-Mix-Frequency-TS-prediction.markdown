@@ -2,8 +2,7 @@
 layout: post
 title:  Mixed Frequency Time Series Predcition
 description: some notes on midas
-categories:
--blog
+categories: blog
 ---
 
 

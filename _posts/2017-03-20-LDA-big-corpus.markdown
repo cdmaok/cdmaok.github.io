@@ -2,8 +2,7 @@
 layout: post
 title:  LDA-big-corpus
 description: LDA's speed up and scale up
-categories:
-- blog
+categories: blog
 ---
 
 

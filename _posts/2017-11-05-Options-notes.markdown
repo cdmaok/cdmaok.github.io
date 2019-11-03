@@ -2,8 +2,7 @@
 layout: post
 title:  Options notes
 description: some notes on options
-categories:
--blog
+categories: blog
 ---
 
 对于一个价格时间序列{S_n}而言，有几个名词需要记住：

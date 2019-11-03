@@ -2,8 +2,7 @@
 layout: post
 title:  Learning to rank
 description: Learning to rank
-categories:
--blog
+categories: blog
 ---
 
 learing to rank 主要是IR领域中用来进行二次排序的模块

@@ -2,8 +2,7 @@
 layout: post
 title:  Spark/Scala Note
 description: scala
-categories:
--blog
+categories: blog
 ---
 
 

@@ -2,8 +2,7 @@
 layout: post
 title:  Courage of being hated
 description: 鸡汤书笔记
-categories:
--blog
+categories: blog
 ---
 
 

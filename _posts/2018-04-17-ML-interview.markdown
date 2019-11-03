@@ -2,8 +2,8 @@
 layout: post
 title:  ML interview
 description: some notes on machine learing interview
-categories:
--blog
+categories: blog
+
 ---
 
 * 介绍一下SVM

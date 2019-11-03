@@ -2,8 +2,7 @@
 layout: post
 title:  DL-note
 description: some notes on tensorflow dl
-categories:
--blog
+categories: blog
 ---
 
 1. 为了加速通常会使用mini batch 方法，主要是因为dnn是一个非凸函数的性质，如果使用全局的数据进行训练，通常会陷入局部最优，通常会使用小的batch进行训练，参考 https://zhuanlan.zhihu.com/p/27349632?utm_medium=social&utm_source=weibo

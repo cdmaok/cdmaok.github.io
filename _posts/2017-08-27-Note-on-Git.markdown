@@ -2,8 +2,7 @@
 layout: post
 title:  Note-on-Git
 description: some notes on git
-categories:
--blog
+categories: blog
 ---
 
 ### Note
