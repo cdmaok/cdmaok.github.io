@@ -767,6 +767,12 @@ STATUS: UP
 
 ### 多元金融
 
+解决方案提供方 STOCK 蚂蚁金服 京东数科
+
+
+
+[研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3458)
+
 ##汽车
 ### 汽车整车
 #### 乘用车
@@ -834,7 +840,10 @@ STOCK 东方金字塔 新东方 学而思
 * 市场高度分散，大体量机构不多
 * STOCK 美莱 艺星 丽都整形
 * 增速放缓至20%，市场进入调整阶段
+* 需求旺盛，供给不足导致行业混乱
 [研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3459)
 见[医疗服务](#医疗服务)
+
+
 
 
