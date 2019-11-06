@@ -451,6 +451,12 @@ STOCK 格力 美的 海尔
 #### 洗衣机
 
 #### 小家电
+
+STOCK 美的 苏泊尔 九阳 博世 美善品
+
+[研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3426)
+
+
 #### 家电零部件
 ### 视听器材
 #### 彩电
@@ -631,6 +637,24 @@ STOCK 永辉 人人乐 三江购物  友谊
 [研究报告](https://pan.baidu.com/disk/home#/all?path=%2F&vmode=list)
 
 ### 旅游综合
+
+- 国内旅游
+* 高星景区仍然以线下为主
+* 用户更加偏好自然景区
+* 用户偏好一站式消费 门票 + 住宿 + 交通打包
+[研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3443)
+
+- 出境旅游
+* 在线出境旅游（通过在线方式进行旅游资源预定）市场规模为756.2亿 CR5=80.2% 头部集中明显
+* 签证政策
+* 人民币汇率
+* 国际旅游航线
+* 互联网技术发展
+* 短视频成新营销手段
+* STOCK OTA 携程 内容UGC 穷游 移动支付 支付宝 签证 上上签
+* 投资因素 企业所在市场 企业资源整合能力 数据优势
+[研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3442)
+
 ### 餐饮
 * 市场巨大分散
 * 利润率4.7%
@@ -761,6 +785,13 @@ STOCK 海底捞 呷脯呷脯 周黑鸭 味千
     5、美团点评:本地生活服务广告抗压增长,线下向线上转化成为行业新增长
 
     风险提示:宏观经济复苏不利,行业发展可能不及预期、行业监管趋严 STATUS:DOWN
+  
+* 营销云 [营销传播](#营销传播)
+  营销平台采用云端技术，市场规模为93亿
+  巨头 Salesforce Adobe Oracle
+  STOCK CRM 纷肖享客 视频营销 微吼  mobvista 
+  中国广告市场规模 5k亿
+  [研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3441)
 
 [IT服务](#IT服务)
 #### 互联网信息服务
@@ -879,7 +910,16 @@ STOCK 东方金字塔 新东方 学而思
 * 连锁机构 STOCK 巧问教育 学能教育
 * 培训班，兴趣班等 
 [研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3460)
-
+#### 教育信息化
+市场规模4k亿
+STOCK 保利威
+* 教育阶段不同，需求大相径庭
+* 市场极度分散
+* 渠道为王，地域性强
+* 跨行业竞争激烈
+* 互联网布局B端业务
+* 教育局头布局B端业务（新东方 好未来）
+[研究报告](http://report.iresearch.cn/report_pdf.aspx?id=3440)
 
 ### 母婴
 
