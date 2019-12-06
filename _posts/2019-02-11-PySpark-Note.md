@@ -75,10 +75,10 @@ ans.map(lambda x:','.join(ans)).saveAsTextFile('')
 9. 优化数据结构
 
 * 资源设置
-num-executors:50-100
-executor-memory:4G-8G
-executor-cores:2-4
-driver-memory:4G以内
-spark.default.parallelism:建议设置成 num-executor * executor-cores * 2
-spark.storage.memoryFraction: 持久化的能占的比例
-spark.shuffle.memoryFraction: shuffle 能占的比例
+num-executors:50-100  
+executor-memory:4G-8G  
+executor-cores:2-4  
+driver-memory:4G以内  
+spark.default.parallelism:建议设置成 num-executor * executor-cores * 2  
+spark.storage.memoryFraction: 持久化的能占的比例  
+spark.shuffle.memoryFraction: shuffle 能占的比例  
